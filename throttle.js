@@ -18,7 +18,7 @@ function throttle(func, wait, options) {
     };
     var throttled = function() {
         var now = now;
-        if (!previous && options.leading === false) previous = now;
+        if (!previous || options.leading === true) previous = now;
         var remaining = wait - (now - previous);
         context = this;
         args = arguments;
