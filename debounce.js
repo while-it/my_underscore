@@ -9,10 +9,10 @@ function debounce(func,wait,immediate){
             timeout = setTimeout(function(){
                 timeout = null
             },wait);
-            if (allow_call) result =  func.apply(_this,[..._args]);
+            if (allow_call) result =  func.apply(_this,_args);
         }else{
             timeout = setTimeout(function (){
-                result = func.apply(_this,[..._args]);
+                result = func.apply(_this,_args);
             },wait);
         }
         return result;
